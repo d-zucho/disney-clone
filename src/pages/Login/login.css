@@ -78,3 +78,15 @@ min-width: 780px;
     max-width: 100%;
     margin-bottom: 1rem;
 }
+
+@media (max-width:768px) {
+
+    .main-container {
+        /* max-width: 500px; */
+        min-width: 468px;
+    }
+
+    .content-container {
+        width: 500px;
+    }
+}

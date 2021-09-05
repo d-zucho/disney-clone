@@ -11,7 +11,7 @@ const Header = (props) => {
                 <div className="logo-container">
                     <DisneyIcon className='disney-icon' />
                 </div>
-                <Navbar />
+                <Navbar className='navbar'/>
                 <div className="login-container">
                     Login
                 </div>
