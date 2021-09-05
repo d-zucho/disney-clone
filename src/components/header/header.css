@@ -1,10 +1,11 @@
-.header-container {
+/* .header-container {
+    width: 100%;
+    min-width: 780px;
     padding-left: 10px;
     height: 70px;
     padding: 0 1.5rem;
     background-color: black;
     position: fixed;
-    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -15,6 +16,7 @@
 
 .header {
     display: flex;
+    align-items: center;
     min-width: 800px;
 }
 
@@ -31,5 +33,35 @@
 }
 
 .login-container {
-    margin-left: 5rem;
+    margin-left: 2.5rem;
+} */
+
+.header-container {
+    height: 70px;
+    width: 100%;
+    display: flex;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+
+.logo-container {
+    width: 15%;
+    margin: 0 10px;
+    max-width: 100px;
+    min-width: 75px;
+}
+
+
+
+.disney-icon {
+    width: 100%;
+}
+
+.login-container {
+    padding-right: 1rem;
 }

@@ -9,9 +9,8 @@ const Header = (props) => {
         <div className="header-container">
             <header className='header'>
                 <div className="logo-container">
-                    <DisneyIcon className='nav-icon' />
+                    <DisneyIcon className='disney-icon' />
                 </div>
-
                 <Navbar />
                 <div className="login-container">
                     Login
