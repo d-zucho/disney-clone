@@ -1,18 +1,15 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
-import { getAuth,
-    GoogleAuthProvider,
-    signInWithPopup
-    } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 
 // firebase config object
 const firebaseConfig = {
-  apiKey: "AIzaSyBk6MutvaZihWh0bJcdJCAx1FHRZIN78sU",
-  authDomain: "disneyplus-clone-42d5c.firebaseapp.com",
-  projectId: "disneyplus-clone-42d5c",
-  storageBucket: "disneyplus-clone-42d5c.appspot.com",
-  messagingSenderId: "925267438517",
-  appId: "1:925267438517:web:13b82fa5ec41722f1887fc"
+  apiKey: 'AIzaSyBk6MutvaZihWh0bJcdJCAx1FHRZIN78sU',
+  authDomain: 'disneyplus-clone-42d5c.firebaseapp.com',
+  projectId: 'disneyplus-clone-42d5c',
+  storageBucket: 'disneyplus-clone-42d5c.appspot.com',
+  messagingSenderId: '925267438517',
+  appId: '1:925267438517:web:13b82fa5ec41722f1887fc',
 }
 
 // Initialize Firebase
@@ -28,24 +25,36 @@ export const auth = getAuth(app)
 export const provider = new GoogleAuthProvider()
 // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
-
 //setting language to default
 auth.languageCode = 'it'
 
 provider.setCustomParameters({
-    'prompt' : 'select_account'
+  prompt: 'select_account',
 })
 
-
 export const handleGoogleAuth = () => {
-    signInWithPopup(auth, provider).then(result => {
-        console.log(result);
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result)
+      console.log(result.user.uid)
     })
-    .catch(error => {
-        console.log(error);
-    }) 
+    .catch((error) => {
+      console.log(error)
+    })
 }
 
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     const uid = user.uid
+//     const displayName = user.displayName
+//     const email = user.displayName
+//     const photoUrl = user.photoUrl
+//     db.
+//   }
+// })
 
+// const createUserProfileDocument (userRef) {
+//   auth.
+// }
 
-export default db;
+export default db
