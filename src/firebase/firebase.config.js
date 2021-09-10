@@ -1,6 +1,11 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  // onAuthStateChanged,
+} from 'firebase/auth'
 
 // firebase config object
 const firebaseConfig = {
@@ -42,19 +47,5 @@ export const handleGoogleAuth = () => {
       console.log(error)
     })
 }
-
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     const uid = user.uid
-//     const displayName = user.displayName
-//     const email = user.displayName
-//     const photoUrl = user.photoUrl
-//     db.
-//   }
-// })
-
-// const createUserProfileDocument (userRef) {
-//   auth.
-// }
 
 export default db
