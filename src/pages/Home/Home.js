@@ -1,10 +1,12 @@
 import './home.css'
+import Header from '../../components/header/Header'
 import CtaLogo1 from '../../assets/images/cta-logo-one.svg'
 import CtaLogo2 from '../../assets/images/cta-logo-two.png'
 
 const Login = (props) => {
   return (
     <div className="main-container">
+      <Header />
       <div className="background-image"></div>
       <div className="content-container">
         {/* <CtaLogo1 className='ctaLogo1' /> */}

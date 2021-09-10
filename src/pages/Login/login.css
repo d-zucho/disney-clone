@@ -3,6 +3,24 @@ body {
   padding: 0;
 }
 
+.home-link-container {
+  margin: 2rem auto;
+  text-align: center;
+  animation: grow 0.2s fill-mode;
+}
+
+.loginPage-home-link {
+  border: 1px solid white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.home-link-container:hover {
+  transform: scale(1.02, 1);
+  transition: all 0.1s ease-in-out;
+}
+
 .center {
   width: 325px;
   border: 1px solid silver;
@@ -49,11 +67,20 @@ form .txt_field {
   pointer-events: none;
 }
 
-.txt_field input:focus ~ label {
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
   top: -5%;
   font-size: 14px;
   transform: translateY(-50%);
   pointer-events: none;
+}
+
+.formSubmitButton {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 2rem;
+  font-size: 1.2rem;
 }
 
 .google-btn {
@@ -61,7 +88,7 @@ form .txt_field {
   height: 42px;
   margin-top: 2rem;
   background-color: #4285f4;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
