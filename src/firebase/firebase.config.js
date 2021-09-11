@@ -1,11 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  // onAuthStateChanged,
-} from 'firebase/auth'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
 // firebase config object
 const firebaseConfig = {
@@ -36,21 +31,5 @@ auth.languageCode = 'it'
 provider.setCustomParameters({
   prompt: 'select_account',
 })
-
-// export const handleGoogleAuth = () => {
-//   signInWithPopup(auth, provider)
-//     .then((result) => {
-//       const user = {
-//         displayName: result.user.displayName,
-//         email: result.user.email,
-//         photoURL: result.user.photoURL,
-//         id: result.user.uid,
-//       }
-//       console.log(user)
-//     })
-//     .catch((error) => {
-//       console.log(error)
-//     })
-// }
 
 export default db

@@ -3,7 +3,7 @@ import Header from '../../components/header/Header'
 import CtaLogo1 from '../../assets/images/cta-logo-one.svg'
 import CtaLogo2 from '../../assets/images/cta-logo-two.png'
 
-const Login = (props) => {
+const Home = (props) => {
   return (
     <div className="main-container">
       <Header />
@@ -27,4 +27,4 @@ const Login = (props) => {
   )
 }
 
-export default Login
+export default Home
