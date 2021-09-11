@@ -37,15 +37,20 @@ provider.setCustomParameters({
   prompt: 'select_account',
 })
 
-export const handleGoogleAuth = () => {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      console.log(result)
-      console.log(result.user.uid)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-}
+// export const handleGoogleAuth = () => {
+//   signInWithPopup(auth, provider)
+//     .then((result) => {
+//       const user = {
+//         displayName: result.user.displayName,
+//         email: result.user.email,
+//         photoURL: result.user.photoURL,
+//         id: result.user.uid,
+//       }
+//       console.log(user)
+//     })
+//     .catch((error) => {
+//       console.log(error)
+//     })
+// }
 
 export default db
