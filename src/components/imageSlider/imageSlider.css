@@ -1,0 +1,51 @@
+.slick-slider {
+  height: auto !important;
+}
+
+.slick-arrow {
+  opacity: 0;
+  height: 100%;
+  width: 5vw;
+  z-index: 1;
+}
+
+.slick-arrow:hover {
+  opacity: 1;
+  transform: opacity 0.2s ease 0s;
+}
+
+.slick-dots button::before {
+  font-size: 10px !important;
+  color: rgb(150, 158, 171) !important;
+}
+
+.slick-list {
+  overflow: initial !important;
+}
+
+.carousel-item-wrapper {
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  position: relative !important;
+}
+
+.carousel-item-wrapper a {
+  border-radius: 4px !important;
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 73%) 0px 16px 10px -10px !important;
+  cursor: pointer !important;
+  display: block !important;
+  position: relative !important;
+  padding: 4px !important;
+}
+
+.slider-image {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.carousel-item-wrapper a:hover {
+  padding: 0 !important;
+  border: 4px solid rgba(249, 249, 249, 0.8) !important;
+  transition-duration: 300ms !important;
+}
