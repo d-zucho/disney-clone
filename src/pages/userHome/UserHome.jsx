@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../../components/header/Header'
 import ImageSlider from '../../components/imageSlider/ImageSlider'
+import Viewers from '../../components/viewers/Viewers'
 import './userHome.css'
 
 const UserHome = (props) => {
@@ -10,6 +11,7 @@ const UserHome = (props) => {
       <div className="userHome-background-image"></div>
       <main className="userHome-main-container">
         <ImageSlider />
+        <Viewers />
       </main>
     </div>
   )
