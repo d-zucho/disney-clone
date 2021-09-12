@@ -1,4 +1,5 @@
 import './header.css'
+import { useEffect } from 'react'
 import { ReactComponent as DisneyIcon } from '../../assets/images/logo.svg'
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/navbar/Navbar'
@@ -10,6 +11,7 @@ import { auth, provider } from '../../firebase/firebase.config'
 import {
   selectUserName,
   selectUserPhoto,
+  setSignOutState,
   setUserLoginDetails,
 } from '../../features/user/userSlice'
 
@@ -18,6 +20,16 @@ const Header = (props) => {
   const history = useHistory()
   const userName = useSelector(selectUserName)
   const userPhoto = useSelector(selectUserPhoto)
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        setUser(user)
+        history.push('/home')
+      }
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userName])
 
   const setUser = (user) => {
     dispatch(
@@ -30,13 +42,25 @@ const Header = (props) => {
   }
 
   const handleGoogleAuth = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        setUser(result.user)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    if (!userName) {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          setUser(result.user)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    } else if (userName) {
+      auth
+        .signOut()
+        .then(() => {
+          dispatch(setSignOutState())
+          history.push('/')
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   }
 
   return (
@@ -54,7 +78,14 @@ const Header = (props) => {
         ) : (
           <>
             <Navbar className="navbar" />
-            <img className="user-photo" alt="user thumbnail" src={userPhoto} />
+            <div className="SignOut">
+              <img className="UserImg" alt="user thumbnail" src={userPhoto} />
+              <div className="DropDown">
+                <span onClick={handleGoogleAuth} className="sign-out-text">
+                  Sign Out
+                </span>
+              </div>
+            </div>
           </>
         )}
       </header>
